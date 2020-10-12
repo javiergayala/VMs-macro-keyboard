@@ -88,12 +88,12 @@ typedef struct TKeys {
 // +---------+--------+-----------+----------+
 
 TKey key[NUMBER_OF_KEYS] = {
-  {.pin =  7, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F13}}}},
+  {.pin =  7, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_LEFT_CTRL, KEY_F13}}}},
   {.pin =  6, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F16}}}},
   {.pin = 14, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F17}}}},
   {.pin = 15, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F18}}}},
   {.pin =  9, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F19}}}},
-  {.pin =  8, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_LEFT_CTRL, KEY_F13}}}},
+  {.pin =  8, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F13}}}},
   {.pin = 10, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_LEFT_CTRL, KEY_F17}}}},
   {.pin = 16, .type = MODIFIER, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {}}
 };
@@ -119,6 +119,7 @@ uint8_t processKey(uint8_t keyIndex) {
     // Press modificators
     for (uint8_t i = 0; i < MAX_COMBINATION_KEYS; i++) {
       if (lkey->modificatorKeys[i]) Keyboard.press((KeyboardKeycode) lkey->modificatorKeys[i]);
+      else if (globalModifier) Keyboard.press(KEY_LEFT_GUI);
       else break;
     }
     for (uint8_t i = 0; i < MAX_SEQUENCE_KEYS; i++) {
@@ -351,7 +352,11 @@ void loop() {
         // Consumer.write(MEDIA_PLAY_PAUSE);
         break;
       case ClickEncoder::DoubleClicked:          // Button was double clicked
-        Consumer.write(MEDIA_PLAY_PAUSE);       // Replace this line to have a different function when double-clicking
+        Keyboard.press(KEY_LEFT_GUI);
+        Keyboard.press(KEY_F11);
+        Keyboard.press(KEY_F12);
+        Keyboard.releaseAll();
+        // Consumer.write(MEDIA_PLAY_PAUSE);       // Replace this line to have a different function when double-clicking
         break;
     }
   }
