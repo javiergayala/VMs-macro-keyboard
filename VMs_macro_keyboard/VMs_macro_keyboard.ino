@@ -88,14 +88,14 @@ typedef struct TKeys {
 // +---------+--------+-----------+----------+
 
 TKey key[NUMBER_OF_KEYS] = {
-  {.pin =  7, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_LEFT_CTRL, KEY_F13}}}},
-  {.pin =  6, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F16}}}},
-  {.pin = 14, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F17}}}},
-  {.pin = 15, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F18}}}},
-  {.pin =  9, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F19}}}},
-  {.pin =  8, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F13}}}},
-  {.pin = 10, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_LEFT_CTRL, KEY_F17}}}},
-  {.pin = 16, .type = MODIFIER, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {}}
+  {.pin =  6, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_LEFT_CTRL, KEY_F13}}}},
+  {.pin =  7, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F16}}}},
+  {.pin =  8, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F17}}}},
+  {.pin =  9, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F18}}}},
+  {.pin = 15, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F19}}}},
+  {.pin = 14, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_F13}}}},
+  {.pin = 16, .type = KEYBOARD, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {{.durationMs = 50, .key = {KEY_LEFT_CTRL, KEY_F17}}}},
+  {.pin = 10, .type = MODIFIER, .state = INACTIVE, .stateStartMs = 0, .modificatorKeys = {}, .action = {}}
 };
 
 // Actions for rotary encoder are later in the code (search for ROTARY_ACTIONS)
