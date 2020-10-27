@@ -37,8 +37,8 @@
 #define REPEAT_CODE_MS       150    // when sending command by holding down key, wait this long before sending command egain
 
 // Rotary encoder connections
-#define ENCODER_CLK           A1
-#define ENCODER_DT            A2
+#define ENCODER_CLK           A2
+#define ENCODER_DT            A1
 #define ENCODER_SW            A0
 #define STEPS_PER_NOTCH       2
 
